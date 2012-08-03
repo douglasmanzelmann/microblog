@@ -43,7 +43,10 @@ describe "User Pages" do
       		before do
         		fill_in "Name",         with: "Example User"
         		fill_in "Email",        with: "user@example.com"
-        		fill_in "Password",     with: "foobar"
+        		fill_in "Password",     wi
+
+
+        		th: "foobar"
         		fill_in "Password confirmation", with: "foobar"
       		end
 
@@ -60,5 +63,11 @@ describe "User Pages" do
         		it { should have_link('Sign out') }
       		end
 		end
+	end
+	describe "edit" do 
+		let(:user) { FactoryGirl.create(:user) }
+		before { visit edit_user_path(user) } 
+
+		describe
 	end
 end
