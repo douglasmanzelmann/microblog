@@ -33,6 +33,10 @@ describe User do
 	it { should be_valid }
 	it { should_not be_admin }
 
+	describe "admin should not be accessible" do 
+		
+	end
+
 	describe "with admin attribute set to 'true'" do 
 		before do 
 			@user.save!
