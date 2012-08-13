@@ -9,7 +9,12 @@ class UsersController < ApplicationController
   end 
 
   def new
-  	@user = User.new
+  	if signed_in?
+      flash[:error] = "You're already registed, silly pants! SO CUT IT OUT!"
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def show
@@ -17,14 +22,14 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
-  	if @user.save
-      sign_in @user
-  	  flash[:success] = "Welcome to the Sample App!"
-  		redirect_to @user
-  	else
-  		render 'new'
-  	end
+   	@user = User.new(params[:user])
+   	if @user.save
+       sign_in @user
+   	  flash[:success] = "Welcome to the Sample App!"
+   		redirect_to @user
+   	else
+   		render 'new'
+   	end
   end
 
   def edit 
