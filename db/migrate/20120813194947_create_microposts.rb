@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class CreateMicroposts < ActiveRecord::Migration
   def change
     create_table :microposts do |t|
@@ -9,3 +10,16 @@ class CreateMicroposts < ActiveRecord::Migration
     add_index :microposts, [:user_id, :created_at]
   end
 end
+=======
+class CreateMicroposts < ActiveRecord::Migration
+  def change
+    create_table :microposts do |t|
+      t.string :content
+      t.integer :user_id
+
+      t.timestamps
+    end
+    add_index :microposts, [:user_id, :created_at]
+  end
+end
+>>>>>>> up to 10.31
