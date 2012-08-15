@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-class Micropost < ActiveRecord::Base
-  attr_accessible :content, :user_id
-end
-=======
 class Micropost < ActiveRecord::Base
   attr_accessible :content
   belongs_to :user
@@ -12,4 +7,3 @@ class Micropost < ActiveRecord::Base
   
   default_scope order: 'microposts.created_at DESC'
 end
->>>>>>> up to 10.31

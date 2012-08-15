@@ -28,6 +28,11 @@ class User < ActiveRecord::Base
   					uniqueness: { case_sensitive: false } 
 
 
+def feed 
+  #this is preliminary
+  Micropost.where("user_id = ?", id)
+end
+
 private
 
   def create_remember_token

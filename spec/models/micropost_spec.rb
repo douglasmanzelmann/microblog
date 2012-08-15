@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-require 'spec_helper'
-
-describe Micropost do
-	let(:user) { FactoriGirl.create(:user) } 
-	before do 
-		#this code is wrong
-		@micropost = Micropost.new(content: "Lorem ipsum", user_id: user.id) 
-	end
-
-	subject { @micropost } 
-
-	it { should respond_to(:content) } 
-	it { should respond_to(:user_id) }
-end
-=======
 require 'spec_helper'
 
 describe Micropost do
@@ -52,4 +36,4 @@ describe Micropost do
 		it { should_not be_valid } 
 	end
 end
->>>>>>> up to 10.31
+
